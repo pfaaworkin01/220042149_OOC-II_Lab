@@ -45,5 +45,26 @@ class Order {
         return calculateSubtotal() + calculateTax();
     }
 
+    public String generateInvoice() {
+        StringBuilder invoice = new StringBuilder("Ice Cream Shop Invoice\n");
+        for (OrderItem item : orderItems) {
+            invoice.append(item.getDescription()).append("\n");
+        }
+        for (IceCreamTopping topping : toppings) {
+            invoice.append(topping.getName()).append(" - 1 time: $")
+                    .append(String.format("%.2f", topping.getPrice())).append("\n");
+        }
+        invoice.append("Subtotal: $").append(String.format("%.2f", calculateSubtotal())).append("\n")
+                .append("Tax: $").append(String.format("%.2f", calculateTax())).append("\n")
+                .append("Total Amount Due: $").append(String.format("%.2f", calculateTotal()));
+
+        return invoice.toString();
+    }
+
+    public void saveInvoiceToFile(String filename) throws IOException {
+        try (FileWriter writer = new FileWriter(filename)) {
+            writer.write(generateInvoice());
+        }
+    }
 
 }

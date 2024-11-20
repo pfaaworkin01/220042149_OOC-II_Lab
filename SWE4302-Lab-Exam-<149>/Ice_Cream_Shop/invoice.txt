@@ -1,0 +1,6 @@
+Ice Cream Shop Invoice
+Chocolate Fudge - 1 scoop(s): $3.00
+Sprinkles - 1 time: $0.30
+Subtotal: $3.30
+Tax: $0.26
+Total Amount Due: $3.56
