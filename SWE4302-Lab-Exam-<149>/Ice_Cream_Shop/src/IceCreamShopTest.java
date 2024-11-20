@@ -19,4 +19,25 @@ public class IceCreamShopTest {
         assertEquals(expectedTotal, order.calculateTotal(), 0.01, "Total calculation failed for single scoop order");
     }
 
+    @Test
+    public void testInvoiceGeneration() throws IOException {
+        IceCreamFlavor strawberrySwirl = new IceCreamFlavor("Strawberry Swirl", 2.75);
+        IceCreamTopping chocolateChips = new IceCreamTopping("Chocolate Chips", 0.50);
+
+        Order order = new Order(false); // Paper cup
+        order.addItem(strawberrySwirl, 2); // 2 scoops
+        order.addTopping(chocolateChips);
+
+        String expectedInvoice = """
+            Ice Cream Shop Invoice
+            Strawberry Swirl - 2 scoop(s): $5.50
+            Chocolate Chips - 1 time: $0.50
+            Subtotal: $6.00
+            Tax: $0.48
+            Total Amount Due: $6.48
+            """;
+
+        assertEquals(expectedInvoice.trim(), order.generateInvoice().trim(), "Invoice generation failed");
+    }
+
 }
