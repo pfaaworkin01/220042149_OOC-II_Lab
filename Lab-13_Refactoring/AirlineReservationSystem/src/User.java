@@ -10,14 +10,9 @@ import java.util.Scanner;
 
 public class User {
 
-    // ************************************************************ Fields
-    // ************************************************************
-
-    /*
-     * 2D Array to store admin credentials. Default credentials are stored on [0][0]
-     * index. Max num of admins can be 10....
-     */
-    static String[][] adminUserNameAndPassword = new String[10][2];
+    private static final int MAX_ADMINS = 10;
+    private static final int ADMIN_CREDENTIAL_FIELDS = 2;
+    static String[][] adminUserNameAndPassword = new String[MAX_ADMINS][ADMIN_CREDENTIAL_FIELDS];
     private static List<Customer> customersCollection = new ArrayList<>();
 
     // ************************************************************
