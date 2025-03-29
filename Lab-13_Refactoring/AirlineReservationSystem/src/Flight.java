@@ -57,4 +57,7 @@ public class Flight {
     public String getFlightDuration() { return flightDuration; }
     public int getAvailableSeats() { return availableSeats; }
     public List<Customer> getPassengers() { return Collections.unmodifiableList(passengers); }
+
+    public void setAvailableSeats(int i) {
+    }
 }
