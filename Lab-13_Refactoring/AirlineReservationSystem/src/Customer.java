@@ -10,7 +10,8 @@ public class Customer {
     private final String password;
     private String address;
     private int age;
-    private final List<Flight> flightsRegisteredByUser;
+    private final List<Flight>
+            flightsRegisteredByUser;
     private final List<Integer> numOfTicketsBookedByUser;
 
     public Customer(CustomerRegistration registration) {
