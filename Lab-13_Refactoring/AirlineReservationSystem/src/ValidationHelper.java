@@ -11,7 +11,6 @@ public final class ValidationHelper {
         if (email == null || email.isBlank()) {
             throw new IllegalArgumentException("Email cannot be empty");
         }
-
         String trimmed = email.trim();
         if (!EMAIL_PATTERN.matcher(trimmed).matches()) {
             throw new IllegalArgumentException(Constants.INVALID_EMAIL_MSG);
