@@ -9,25 +9,18 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-public class FlightReservation implements DisplayClass {
+public class FlightReservation extends FlightService {
 
-    //        ************************************************************ Fields ************************************************************
+    private final FlightManager flightManager;
+    private final CustomerManager customerManager;
+
     Flight flight = new Flight();
     int flightIndexInFlightList;
 
-    //        ************************************************************ Behaviours/Methods ************************************************************
+    public FlightReservation() {
+        flightManager = null;
+    }
 
-
-    /**
-     * Book the numOfTickets for said flight for the specified user. Update the available seats in main system by
-     * Subtracting the numOfTickets from the main system. If a new customer registers for the flight, then it adds
-     * the customer to that flight, else if the user is already added to that flight, then it just updates the
-     * numOfSeats of that flight.
-     *
-     * @param flightNo     FlightID of the flight to be booked
-     * @param numOfTickets number of tickets to be booked
-     * @param userID       userID of the user which is booking the flight
-     */
     void bookFlight(String flightNo, int numOfTickets, String userID) {
         boolean isFound = false;
         for (Flight f1 : flight.getFlightList()) {

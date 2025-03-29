@@ -42,9 +42,8 @@ public class Customer {
      */
     Customer(String name, String email, String password, String phone, String address, int age) {
         RandomGenerator random = new RandomGenerator();
-        random.randomIDGen();
         this.name = name;
-        this.userID = random.getRandomNumber();
+        this.userID = random.generateId();
         this.email = email;
         this.password = password;
         this.phone = phone;
