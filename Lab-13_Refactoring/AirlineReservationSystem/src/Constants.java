@@ -1,5 +1,4 @@
 public final class Constants {
-    // Flight Configuration
     public static final int MIN_FLIGHT_SEATS = 75;          // Minimum seats per flight
     public static final int MAX_FLIGHT_SEATS = 500;         // Maximum seats per flight
     public static final int MAX_SEATS_PER_BOOKING = 10;     // Max tickets per booking
@@ -32,12 +31,10 @@ public final class Constants {
     public static final int MIN_PASSENGER_AGE = 1;
     public static final int MAX_PASSENGER_AGE = 120;
 
-    // Formatting Constants
     public static final int DISPLAY_LINE_LENGTH = 120;
     public static final String DATE_FORMAT = "EEEE, dd MMMM yyyy, HH:mm a";
     public static final String TIME_FORMAT = "HH:mm";
 
-    // UI Messages
     public static final String WELCOME_BANNER =
             "\n=============================================\n" +
                     "      WELCOME TO BAV AIRLINES SYSTEM       \n" +
