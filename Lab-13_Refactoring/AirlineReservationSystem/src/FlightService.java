@@ -13,7 +13,6 @@ public abstract class FlightService {
     protected boolean isSeatAvailable(Flight flight, int requestedSeats) {
         return flight.getAvailableSeats() >= requestedSeats;
     }
-
     protected String generateArrivalTime(String departureTime, String duration) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_FORMAT);
         LocalDateTime departure = LocalDateTime.parse(departureTime, formatter);
